@@ -28,4 +28,15 @@ export default {
   -webkit-transition: width 2s;
   -o-transition: width 2s;
 }
+page {
+  height: 100%;
+  line-height: 1;
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', 'arial', 'sans-serif', 'Droid Sans Fallback', 'Helvetica neue', 'Microsoft Yahei', 'Helvetica', 'Tahoma', 'lantinghei sc';
+  -webkit-tap-highlight-color: transparent;
+  background: #fff;
+}
+.navigator-hover{
+  background-color: #fff;
+  opacity: 1;
+}
 </style>

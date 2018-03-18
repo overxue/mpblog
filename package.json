@@ -60,7 +60,10 @@
     "webpack-hot-middleware": "^2.18.0",
     "webpack-dev-middleware-hard-disk": "^1.10.0",
     "webpack-merge": "^4.1.0",
-    "postcss-loader": "^2.0.6"
+    "postcss-loader": "^2.0.6",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "particles.js": "^2.0.0"
   },
   "engines": {
     "node": ">= 4.0.0",
