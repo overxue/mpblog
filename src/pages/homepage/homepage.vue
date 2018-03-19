@@ -1,5 +1,6 @@
 <template>
   <div class="homepage">
+    <music></music>
     <div id="particles"></div>
     <div class="content">
       <div class="avatar">
@@ -26,11 +27,12 @@
 
 <script type="text/ecmascript-6">
   // import particles from 'particles.js'
+  import Music from '@/components/music'
 
   export default {
-    // mounted () {
-    //   particlesJS.load('particles', '/particles/particles.json')
-    // }
+    components: {
+      Music
+    }
   }
 </script>
 

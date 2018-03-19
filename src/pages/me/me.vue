@@ -48,7 +48,7 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-  @import '../../../node_modules/github-markdown-css/github-markdown.css'
+  // @import '../../../node_modules/github-markdown-css/github-markdown.css'
 
   .me
     position:relative
