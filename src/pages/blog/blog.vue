@@ -26,7 +26,7 @@
             <div class="article-list">
               <div class="label"><span>new</span></div>
               <h1 class="title">
-                <a href="">测试哈哈哈哈哈</a>
+                <a href="../blogdetail/blogdetail">测试哈哈哈哈哈</a>
               </h1>
               <div class="introduction">
                   <i class="icon-user">
