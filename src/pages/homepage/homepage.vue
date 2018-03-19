@@ -17,7 +17,7 @@
           <a class="tab-link" href="https://github.com/overxue">GitHub</a>
         </li>
         <li class="tab-item">
-          <a class="tab-link" href="/me">About Me</a>
+          <a class="tab-link" href="../me/me">About Me</a>
         </li>
       </ul>
     </div>

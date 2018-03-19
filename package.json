@@ -63,8 +63,7 @@
     "postcss-loader": "^2.0.6",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "particles.js": "^2.0.0",
-    "better-scroll": "^1.8.4"
+    "github-markdown-css": "^2.10.0"
   },
   "engines": {
     "node": ">= 4.0.0",

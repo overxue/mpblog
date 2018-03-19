@@ -15,7 +15,7 @@
             <div class="articleListPage-tags">
               <div class="grid-row">
                 <div class="content">
-                  <a v-for="(item, index) in categories" href="" :class="{'active':selectType===item.id}">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></a>
+                  <a v-for="item in categories" href="" :class="{'active':selectType === item.id}">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></a>
                 </div>
               </div>
             </div>

@@ -5,12 +5,6 @@
         <div class="blog-detail-contaner">
           <div class="header">
             <div class="header-cover no-cover"></div>
-            <div class="header-body">
-              <div class="tit">哈哈</div>
-              <div class="article-info">
-                <span>嘿嘿</span>
-              </div>
-            </div>
           </div>
           <div class="article-section">
             <div class="caption">
@@ -18,19 +12,45 @@
               <p class="time">发布时间：<span>456：123</span></p>
             </div>
             <div class="article markdown-body">
-              拉拉等级分啦拉水电费了垃圾地方了
+              拉拉等级分啦拉水电费了垃圾地方了阿道夫ad发送的
+              asdf阿斯顿发斯蒂芬阿斯顿发生阿斯顿发杀死对方阿斯顿发送到发放阿斯顿发生
+              的故事大概拉拉等级分啦拉水电费了垃圾地方了阿道夫ad发送的
+              asdf阿斯顿发斯蒂芬阿斯顿发生阿斯顿发杀死对方阿斯顿发送到发放阿斯顿发生
+              的故事大概拉拉等级分啦拉水电费了垃圾地方了阿道夫ad发送的
+              asdf阿斯顿发斯蒂芬阿斯顿发生阿斯顿发杀死对方阿斯顿发送到发放阿斯顿发生
+              的故事大概
             </div>
             <div class="sns-share">
-              <a href="javascript:void(0)" @click.prevent="showDetail()">
+              <div @click.prevent="showDetail()">
                 <i class="l-icon icon-money"></i>
                 <span>打赏</span>
-              </a>
+              </div>
             </div>
           </div>
         </div>
         <v-footer></v-footer>
       </div>
     </div>
+    <transition name="fade">
+      <!-- 遮罩层 -->
+      <div class="many" v-show="detailShow" @click="hideDetail"></div>
+    </transition>
+      <!-- 内容层 -->
+    <transition name="fade">
+      <div class="modal-dialog" v-show="detailShow">
+        <div class="modal-content">
+          <div class="modal-header" @click="hideDetail">
+            <i class="icon-cross"></i>
+          </div>
+          <div class="modal-boday">
+            <div class="title">如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！</div>
+            <div class="img">
+              <img src="/static/img/wechat.jpg" class="img-item">
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -38,6 +58,19 @@
   import Footer from '@/components/footer'
 
   export default {
+    data () {
+      return {
+        detailShow: false
+      }
+    },
+    methods: {
+      showDetail () {
+        this.detailShow = true
+      },
+      hideDetail () {
+        this.detailShow = false
+      }
+    },
     components: {
       'v-footer': Footer
     }
@@ -55,10 +88,8 @@
     padding:0
     background: #dee3e7
     .page
-      // padding-bottom: 50px
-      position: absolute
-      top: 0
-      bottom: 0
+      position: relative
+      padding-bottom: 45px
       overflow: hidden
       width: 100%
       .blog-detail
@@ -86,8 +117,6 @@
               &.no-cover
                 background: #1f3747
                 background-image: -webkit-linear-gradient(left,#1f3747,#293d31)
-            .header-body
-              display: none
           .article-section
             padding: 1em 0
             .caption
@@ -109,7 +138,7 @@
             .sns-share
               padding: 2em 0 2em
               text-align: center
-              a
+              div
                 display: inline-block;
                 width: 80px;
                 height: 80px;
@@ -267,4 +296,8 @@
             margin-top: 40px
             font-size: 16px
             line-height: 18px
+          .img
+            .img-item
+              width: 300px
+              height: 300px
 </style>
