@@ -90,7 +90,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import footer from '@/components/footer'
+  import Footer from '@/components/footer'
   import { request } from '@/utils/request'
 
   export default {
@@ -118,7 +118,7 @@
       }
     },
     components: {
-      'v-footer': footer
+      'v-footer': Footer
     }
   }
 </script>

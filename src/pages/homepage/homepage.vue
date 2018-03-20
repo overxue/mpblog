@@ -1,7 +1,6 @@
 <template>
   <div class="homepage">
     <music></music>
-    <div id="particles"></div>
     <div class="content">
       <div class="avatar">
         <img src="/static/img/avatar.jpg" class="avatar-item">
@@ -26,7 +25,6 @@
 </template>
 
 <script type="text/ecmascript-6">
-  // import particles from 'particles.js'
   import Music from '@/components/music'
 
   export default {
