@@ -35,6 +35,10 @@ page {
   -webkit-tap-highlight-color: transparent;
   background: #fff;
 }
+navigator  {
+  color: #7e8c8d;
+}
+
 .navigator-hover{
   background-color: #fff;
   opacity: 1;

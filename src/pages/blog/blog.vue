@@ -1,5 +1,6 @@
 <template>
   <div class="blog">
+    <navigation :blog="1"></navigation>
     <div class="pages">
       <div style="min-height: 100%">
         <div class="header">
@@ -15,7 +16,7 @@
             <div class="articleListPage-tags">
               <div class="grid-row">
                 <div class="content">
-                  <a v-for="item in categories" href="" :class="{'active':selectType === item.id}">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></a>
+                  <a v-for="(item, index) in categories" href="#" :class="{'active':selectType === item.id}">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></a>
                 </div>
               </div>
             </div>
@@ -91,6 +92,7 @@
 
 <script type="text/ecmascript-6">
   import Footer from '@/components/footer'
+  import Navigation from '@/components/navigation'
   import { request } from '@/utils/request'
 
   export default {
@@ -118,7 +120,8 @@
       }
     },
     components: {
-      'v-footer': Footer
+      'v-footer': Footer,
+      Navigation
     }
   }
 </script>

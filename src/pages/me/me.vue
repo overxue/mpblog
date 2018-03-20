@@ -1,5 +1,6 @@
 <template>
   <div class="me">
+    <navigation :me="1"></navigation>
     <div class="page" ref="aboutme">
       <div class="blog-detail">
         <div class="blog-detail-contaner">
@@ -39,10 +40,12 @@
 
 <script type="text/ecmascript-6">
   import Footer from '@/components/footer'
+  import Navigation from '@/components/navigation'
 
   export default {
     components: {
-      'v-footer': Footer
+      'v-footer': Footer,
+      Navigation
     }
   }
 </script>
