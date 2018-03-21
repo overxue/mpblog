@@ -43,10 +43,7 @@
         first: false,
         showNavigation: false
       }
-    },
-    created () {
-      console.log(this.blog)
-    },
+    }
     methods: {
       showNav () {
         this.first = !this.first

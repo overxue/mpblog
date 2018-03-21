@@ -24,61 +24,32 @@
         </div>
         <div class="article">
           <div class="article-item">
-            <div class="article-list">
-              <div class="label"><span>new</span></div>
+            <div v-for="(item, index) in articles" class="article-list">
+              <div class="label" v-show="index == 0 || index == 1"><span>new</span></div>
               <h1 class="title">
-                <a href="../blogdetail/blogdetail">测试哈哈哈哈哈</a>
+                <a href="javascript:void(0)" @click="goDetail(item.id)">{{item.title}}</a>
               </h1>
               <div class="introduction">
                   <i class="icon-user">
                     <span class="user">XueCong</span>
                   </i>
                   <i class="icon-clock">
-                    <span class="time">哈哈</span>
+                    <span class="time">{{ timeago(item.created_at) }}</span>
                   </i>
                   <i class="icon-eye">
-                    <span class="view">哈哈</span>
+                    <span class="view">{{item.view_count}}</span>
                   </i>
               </div>
               <div class="article-content">
-                简介拉水电费了拉到啦啦啦啦啦啦啦啦领料单寄来的 拉来的急拉的链接垃圾说代理费拉屎江东父老拉水电费了就啦啦啦啦啦就那啥地方了；阿萨德风口浪尖
+                {{item.excerpt}}
               </div>
               <div class="readmore">
                 <div class="left">
                   <i class="icon-price-tags"></i>
-                  <a href="" class="tage">哈哈</a>
+                  <a href="javascript:void(0)" @click="selectCategory(category.id)" class="tage" v-for="(category, admi) in item.categories.data">{{category.name}}</a>
                 </div>
                 <div class="right">
-                  <a href="" class="readmore">阅读全文 <span>>></span></a>
-                </div>
-              </div>
-            </div>
-            <div class="article-list">
-              <div class="label"><span>new</span></div>
-              <h1 class="title">
-                <a href="">测试哈哈哈哈哈</a>
-              </h1>
-              <div class="introduction">
-                  <i class="icon-user">
-                    <span class="user">XueCong</span>
-                  </i>
-                  <i class="icon-clock">
-                    <span class="time">哈哈</span>
-                  </i>
-                  <i class="icon-eye">
-                    <span class="view">哈哈</span>
-                  </i>
-              </div>
-              <div class="article-content">
-                简介拉水电费了拉到啦啦啦啦啦啦啦啦领料单寄来的 拉来的急拉的链接垃圾说代理费拉屎江东父老拉水电费了就啦啦啦啦啦就那啥地方了；阿萨德风口浪尖
-              </div>
-              <div class="readmore">
-                <div class="left">
-                  <i class="icon-price-tags"></i>
-                  <a href="" class="tage">哈哈</a>
-                </div>
-                <div class="right">
-                  <a href="" class="readmore">阅读全文 <span>>></span></a>
+                  <a href="javascript:void(0)" @click="goDetail(item.id)" class="readmore">阅读全文 <span>>></span></a>
                 </div>
               </div>
             </div>
@@ -94,21 +65,23 @@
   import Footer from '@/components/footer'
   import Navigation from '@/components/navigation'
   import { request } from '@/utils/request'
+  import timeago from 'timeago.js'
 
   export default {
     data () {
       return {
         selectType: 0,
-        categories: []
+        categories: [],
+        articles: []
       }
     },
     created () {
       this._getCategory()
+      this._getArticle()
     },
     methods: {
       _getCategory () {
-        let categories = request('/api/categories')
-        categories.then((res) => {
+        request('/api/categories').then((res) => {
           if (res.statusCode === 200) {
             res.data.data.unshift({
               id: 0,
@@ -117,6 +90,16 @@
             this.categories = res.data.data
           }
         })
+      },
+      _getArticle () {
+        request('/api/articles?page=1&include=categories').then((res) => {
+          if (res.statusCode === 200) {
+            this.articles = res.data.data
+          }
+        })
+      },
+      timeago (time) {
+        return timeago().format(time, 'zh_CN')
       }
     },
     components: {
