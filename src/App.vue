@@ -35,12 +35,59 @@ page {
   -webkit-tap-highlight-color: transparent;
   background: #fff;
 }
-navigator  {
+navigator {
   color: #7e8c8d;
 }
 
 .navigator-hover{
   background-color: #fff;
   opacity: 1;
+}
+@font-face{
+  font-family: 'icomoon';
+  src:  url('./fonts/icomoon.eot?29mqfn');
+  src:  url('./fonts/icomoon.eot?29mqfn#iefix') format('embedded-opentype'),
+    url('./fonts/icomoon.ttf?29mqfn') format('truetype'),
+    url('./fonts/icomoon.woff?29mqfn') format('woff'),
+    url('./fonts/icomoon.svg?29mqfn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"]{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+.icon-price-tags:before{
+  content: "\e936";
+}
+.icon-money:before{
+  content: "\e93e";
+}
+.icon-clock:before{
+  content: "\e94e";
+}
+.icon-user:before{
+  content: "\e971";
+}
+.icon-eye:before{
+  content: "\e9ce";
+}
+.icon-cross:before{
+  content: "\ea0f";
+}
+.icon-sina-weibo:before{
+  content: "\ea9a";
 }
 </style>

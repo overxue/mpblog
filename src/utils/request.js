@@ -1,5 +1,5 @@
 export function request (requesturl) {
-  const url = 'http://blog.test'
+  const url = 'https://www.overxue.com'
   return new Promise((resolve, reject) => {
     wx.request({
       url: `${url}${requesturl}`,

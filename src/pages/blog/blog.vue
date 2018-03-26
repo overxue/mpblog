@@ -34,7 +34,7 @@
                     <span class="user">XueCong</span>
                   </i>
                   <i class="icon-clock">
-                    <span class="time">{{ timeago(item.created_at) }}</span>
+                    <span class="time">{{item.created_at}}</span>
                   </i>
                   <i class="icon-eye">
                     <span class="view">{{item.view_count}}</span>
@@ -45,8 +45,9 @@
               </div>
               <div class="readmore">
                 <div class="left">
-                  <i class="icon-price-tags"></i>
-                  <a href="javascript:void(0)" @click="selectCategory(category.id)" class="tage" v-for="(category, admi) in item.categories.data">{{category.name}}</a>
+                  <i class="icon-price-tags">
+                    <i class="tage" v-for="(category, admi) in item.categories.data">{{category.name}}</i>
+                  </i>
                 </div>
                 <div class="right">
                   <a href="javascript:void(0)" @click="goDetail(item.id)" class="readmore">阅读全文 <span>>></span></a>
@@ -94,12 +95,12 @@
       _getArticle () {
         request('/api/articles?page=1&include=categories').then((res) => {
           if (res.statusCode === 200) {
+            res.data.data.forEach((res) => {
+              res.created_at = timeago().format(res.created_at, 'zh_CN')
+            })
             this.articles = res.data.data
           }
         })
-      },
-      timeago (time) {
-        return timeago().format(time, 'zh_CN')
       }
     },
     components: {
@@ -276,6 +277,7 @@
                 text-align: center
                 line-height: 15px
                 color: #fff
+                font-size: 15px
             .title
               line-height: 20px
               a
@@ -290,6 +292,7 @@
                 font-size: 14px
                 line-height: 14px
                 margin-right: 10px
+                display: inline-block
                 .user, .time, .view
                   margin-left: 5px
                   font-size: 14px
@@ -301,18 +304,17 @@
               .left
                 float: left
                 .icon-price-tags
-                  margin-right: 5px
                   font-size: 14px
-                  line-height: 15px
+                  line-height: 14px
                   color: #f70
-                .tage
-                  color: #333
-                  font-size: 14px
-                  background: #eee
-                  margin: 5px 5px 0 0
-                  padding: 1px 5px
-                  border-radius: 4px
-                  margin-top: 2px
+                  .tage
+                    color: #333
+                    font-size: 14px
+                    background: #eee
+                    margin: 0 5px 0 5px
+                    padding: 1px 5px
+                    border-radius: 4px
+                    display: inline-block
               .right
                 float: right
                 .readmore

@@ -43,7 +43,7 @@
         first: false,
         showNavigation: false
       }
-    }
+    },
     methods: {
       showNav () {
         this.first = !this.first
