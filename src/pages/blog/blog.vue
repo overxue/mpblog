@@ -16,7 +16,7 @@
             <div class="articleListPage-tags">
               <div class="grid-row">
                 <div class="content">
-                  <a v-for="(item, index) in categories" href="#" :class="{'active':selectType === item.id}">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></a>
+                  <div v-for="(item, index) in categories" :class="{'active':selectType === item.id}" @click="selectCategory(item.id)">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></div>
                 </div>
               </div>
             </div>
@@ -94,6 +94,24 @@
       },
       _getArticle () {
         request('/api/articles?page=1&include=categories').then((res) => {
+          if (res.statusCode === 200) {
+            res.data.data.forEach((res) => {
+              res.created_at = timeago().format(res.created_at, 'zh_CN')
+            })
+            this.articles = res.data.data
+          }
+        })
+      },
+      selectCategory (id) {
+        if (this.selectType === id) {
+          return
+        }
+        this.selectType = id
+        if (this.selectType === 0) {
+          this._getArticle()
+          return
+        }
+        request(`/api/categories/${id}/articles?include=categories`).then((res) => {
           if (res.statusCode === 200) {
             res.data.data.forEach((res) => {
               res.created_at = timeago().format(res.created_at, 'zh_CN')
@@ -197,7 +215,7 @@
               visibility: hidden
             .content
               padding: 12px 0 5px 10px
-              a
+              div
                 position: relative
                 display: inline-block
                 max-width: 100%

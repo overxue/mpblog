@@ -11,12 +11,12 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "mpvue": "^1.0.6"
+    "mpvue": "^1.0.7"
   },
   "devDependencies": {
-    "mpvue-loader": "^1.0.8",
+    "mpvue-loader": "^1.0.9",
     "mpvue-webpack-target": "^1.0.0",
-    "mpvue-template-compiler": "^1.0.6",
+    "mpvue-template-compiler": "^1.0.7",
     "postcss-mpvue-wxss": "^1.0.0",
     "px2rpx-loader": "^0.1.8",
     "autoprefixer": "^7.1.2",
