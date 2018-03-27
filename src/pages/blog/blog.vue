@@ -50,7 +50,7 @@
                   </i>
                 </div>
                 <div class="right">
-                  <a href="javascript:void(0)" @click="goDetail(item.id)" class="readmore">阅读全文 <span>>></span></a>
+                  <a href="javascript:void(0)" @click="goDetail(item.id)" class="readmore" style="display:inline;">阅读全文 <span>>></span></a>
                 </div>
               </div>
             </div>
