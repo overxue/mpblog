@@ -65,6 +65,9 @@
         detailShow: false
       }
     },
+    mounted () {
+      console.log(this.$root.$mp.query.id)
+    },
     methods: {
       showDetail () {
         this.detailShow = true

@@ -27,7 +27,7 @@
             <div v-for="(item, index) in articles" class="article-list">
               <div class="label" v-show="index == 0 || index == 1"><span>new</span></div>
               <h1 class="title">
-                <a href="javascript:void(0)" @click="goDetail(item.id)">{{item.title}}</a>
+                <a href="../blogdetail/blogdetail?id=4">{{item.title}}</a>
               </h1>
               <div class="introduction">
                   <i class="icon-user">
@@ -67,6 +67,7 @@
   import Navigation from '@/components/navigation'
   import { request } from '@/utils/request'
   import timeago from 'timeago.js'
+  // import fly from 'flyio/dist/npm/wx'
 
   export default {
     data () {
@@ -79,6 +80,17 @@
     created () {
       this._getCategory()
       this._getArticle()
+      // fly.get('https://www.overxue.com/api/categories').then((res) => {
+      //   console.log(res)
+      // })
+      // fly.get('https://www.overxue.com/api/categories', {xx: 6}).then((d) => {
+      //   // 输出请求数据
+      //   console.log(d.data)
+      //   // 输出响应头
+      //   console.log(d.header)
+      // }).catch(err => {
+      //   console.log(err.status, err.message)
+      // })
     },
     methods: {
       _getCategory () {
