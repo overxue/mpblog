@@ -1,6 +1,6 @@
 <template>
-  <div class="blogdetail">
-    <navigation :blog="1"></navigation>
+  <div class="blogdetail" :class="{'detail': detailShow || show}">
+    <navigation :blog="1" @show="showgun"></navigation>
     <div class="page">
       <div class="blog-detail">
         <div class="blog-detail-contaner">
@@ -9,17 +9,11 @@
           </div>
           <div class="article-section">
             <div class="caption">
-              <h1 class="titl">哈哈哈</h1>
-              <p class="time">发布时间：<span>456：123</span></p>
+              <h1 class="titl">{{articledetail.title}}</h1>
+              <p class="time">发布时间：<span>{{articledetail.created_at}}</span></p>
             </div>
             <div class="article markdown-body">
-              拉拉等级分啦拉水电费了垃圾地方了阿道夫ad发送的
-              asdf阿斯顿发斯蒂芬阿斯顿发生阿斯顿发杀死对方阿斯顿发送到发放阿斯顿发生
-              的故事大概拉拉等级分啦拉水电费了垃圾地方了阿道夫ad发送的
-              asdf阿斯顿发斯蒂芬阿斯顿发生阿斯顿发杀死对方阿斯顿发送到发放阿斯顿发生
-              的故事大概拉拉等级分啦拉水电费了垃圾地方了阿道夫ad发送的
-              asdf阿斯顿发斯蒂芬阿斯顿发生阿斯顿发杀死对方阿斯顿发送到发放阿斯顿发生
-              的故事大概
+              {{articledetail.body}}
             </div>
             <div class="sns-share">
               <div @click.prevent="showDetail()">
@@ -58,22 +52,35 @@
 <script type="text/ecmascript-6">
   import Footer from '@/components/footer'
   import Navigation from '@/components/navigation'
+  import { getArticledetail } from '@/utils/article'
+  import timeago from 'timeago.js'
 
   export default {
     data () {
       return {
-        detailShow: false
+        detailShow: false,
+        articledetail: [],
+        show: false
       }
     },
     mounted () {
-      console.log(this.$root.$mp.query.id)
+      this._getArticledetail(this.$root.$mp.query.id)
     },
     methods: {
+      showgun () {
+        this.show = !this.show
+      },
       showDetail () {
         this.detailShow = true
       },
       hideDetail () {
         this.detailShow = false
+      },
+      _getArticledetail (id) {
+        getArticledetail(id).then((res) => {
+          res.created_at = timeago().format(res.created_at, 'zh_CN')
+          this.articledetail = res
+        })
       }
     },
     components: {
@@ -93,6 +100,10 @@
     margin:0
     padding:0
     background: #dee3e7
+    // 解决弹出层滚动
+    &.detail
+      height: 100%
+      overflow: hidden
     .page
       position: relative
       padding-bottom: 45px

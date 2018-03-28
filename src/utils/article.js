@@ -11,3 +11,12 @@ export function getArticle (page = 1) {
     console.log(err)
   })
 }
+
+export function getArticledetail (id) {
+  const url = `${http}/api/articles/${id}`
+  return fly.get(url).then((res) => {
+    return Promise.resolve(res.data)
+  }).catch((err) => {
+    console.log(err)
+  })
+}

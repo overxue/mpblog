@@ -1,6 +1,6 @@
 <template>
-  <div class="me">
-    <navigation :me="1"></navigation>
+  <div class="me" :class="{'detail': show}">
+    <navigation :me="1" @show="showgun"></navigation>
     <div class="page" ref="aboutme">
       <div class="blog-detail">
         <div class="blog-detail-contaner">
@@ -43,6 +43,11 @@
   import Navigation from '@/components/navigation'
 
   export default {
+    data () {
+      return {
+        show: false
+      }
+    },
     components: {
       'v-footer': Footer,
       Navigation
@@ -59,6 +64,9 @@
     margin:0
     padding:0
     background: #dee3e7
+    &.detail
+      height: 100%
+      overflow: hidden
     .page
       position: relative
       padding-bottom: 45px

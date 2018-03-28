@@ -1,6 +1,6 @@
 <template>
-  <div class="blog">
-    <navigation :blog="1"></navigation>
+  <div class="blog" :class="{'detail': show}">
+    <navigation :blog="1" @show="showgun"></navigation>
     <div class="pages">
       <div style="min-height: 100%">
         <div class="header">
@@ -27,7 +27,7 @@
             <div v-for="(item, index) in articles" :key="index" class="article-list">
               <div class="label" v-show="index == 0 || index == 1"><span>new</span></div>
               <h1 class="title">
-                <a href="../blogdetail/blogdetail?id=4">{{item.title}}</a>
+                <a :href="'../blogdetail/blogdetail?id=' + item.id ">{{item.title}}</a>
               </h1>
               <div class="introduction">
                   <i class="icon-user">
@@ -50,7 +50,7 @@
                   </i>
                 </div>
                 <div class="right">
-                  <a href="javascript:void(0)" @click="goDetail(item.id)" class="readmore" style="display:inline;">阅读全文 <span>>></span></a>
+                  <a :href="'../blogdetail/blogdetail?id=' + item.id " class="readmore" style="display:inline;">阅读全文 <span>>></span></a>
                 </div>
               </div>
             </div>
@@ -74,14 +74,18 @@
       return {
         selectType: 0,
         categories: [],
-        articles: []
+        articles: [],
+        show: false
       }
     },
-    created () {
+    mounted () {
       this._getCategory()
       this._getArticle()
     },
     methods: {
+      showgun () {
+        this.show = !this.show
+      },
       _getCategory () {
         getCategory().then((res) => {
           res.data.unshift({
@@ -130,6 +134,9 @@
     margin:0
     padding:0
     background: #dee3e7
+    &.detail
+      height: 100%
+      overflow: hidden
     .pages
       position: relative
       padding-bottom: 45px

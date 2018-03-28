@@ -48,6 +48,7 @@
       showNav () {
         this.first = !this.first
         this.showNavigation = !this.showNavigation
+        this.$emit('show')
       }
     }
   }
@@ -131,7 +132,7 @@
       background: #fff
       &>i
         position: absolute
-        left: 8px
+        left: 9px
         display: block
         width: 26px
         height: 4px
@@ -139,11 +140,11 @@
         border-radius: 4px
         background: #444
       &>i:first-child
-        top:10px
+        top:11px
       &>i:nth-child(2)
-        top:19px
+        top:20px
       &>i:nth-child(3)
-        top:28px
+        top:29px
       .first
         transform: translateY(9px) rotate(-45deg)
       .second
