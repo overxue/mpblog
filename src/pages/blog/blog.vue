@@ -138,13 +138,9 @@
       height: 100%
       overflow: hidden
     .pages
-      position: relative
+      // position: relative
       padding-bottom: 45px
       overflow: hidden
-      // position: absolute
-      // top: 0
-      // bottom: 0
-      // overflow: hidden
       width: 100%
       .header
         position: relative
@@ -229,7 +225,7 @@
                 background: #eee
                 font-size: 12px
                 color: #333
-                overflow: hidden
+                // overflow: hidden
                 text-overflow: ellipsis
                 white-space: nowrap
                 box-sizing: border-box
@@ -240,7 +236,7 @@
                   left: 0
                   width: 0
                   height: 0
-                  border-width: 12px 12px 12px 0
+                  border-width: 12px 12px 12.5px 0
                   border-color: #fff transparent
                   border-style: solid
                 &:after

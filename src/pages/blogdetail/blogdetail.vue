@@ -105,7 +105,6 @@
       height: 100%
       overflow: hidden
     .page
-      position: relative
       padding-bottom: 45px
       overflow: hidden
       width: 100%
