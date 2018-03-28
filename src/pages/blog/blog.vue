@@ -16,7 +16,7 @@
             <div class="articleListPage-tags">
               <div class="grid-row">
                 <div class="content">
-                  <div v-for="(item, index) in categories" :class="{'active':selectType === item.id}" @click="selectCategory(item.id)">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></div>
+                  <div v-for="(item, index) in categories" :key="index" :class="{'active':selectType === item.id}" @click="selectCategory(item.id)">{{item.name}}<span v-if="item.articles_count">{{item.articles_count}}</span></div>
                 </div>
               </div>
             </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="article">
           <div class="article-item">
-            <div v-for="(item, index) in articles" class="article-list">
+            <div v-for="(item, index) in articles" :key="index" class="article-list">
               <div class="label" v-show="index == 0 || index == 1"><span>new</span></div>
               <h1 class="title">
                 <a href="../blogdetail/blogdetail?id=4">{{item.title}}</a>
@@ -46,7 +46,7 @@
               <div class="readmore">
                 <div class="left">
                   <i class="icon-price-tags">
-                    <i class="tage" v-for="(category, admi) in item.categories.data">{{category.name}}</i>
+                    <i class="tage" v-for="(category, admi) in item.categories.data" :key="admi">{{category.name}}</i>
                   </i>
                 </div>
                 <div class="right">
@@ -65,9 +65,9 @@
 <script type="text/ecmascript-6">
   import Footer from '@/components/footer'
   import Navigation from '@/components/navigation'
-  import { request } from '@/utils/request'
+  import { getCategory, getCategoryArticle } from '@/utils/category'
+  import { getArticle } from '@/utils/article'
   import timeago from 'timeago.js'
-  // import fly from 'flyio/dist/npm/wx'
 
   export default {
     data () {
@@ -80,38 +80,23 @@
     created () {
       this._getCategory()
       this._getArticle()
-      // fly.get('https://www.overxue.com/api/categories').then((res) => {
-      //   console.log(res)
-      // })
-      // fly.get('https://www.overxue.com/api/categories', {xx: 6}).then((d) => {
-      //   // 输出请求数据
-      //   console.log(d.data)
-      //   // 输出响应头
-      //   console.log(d.header)
-      // }).catch(err => {
-      //   console.log(err.status, err.message)
-      // })
     },
     methods: {
       _getCategory () {
-        request('/api/categories').then((res) => {
-          if (res.statusCode === 200) {
-            res.data.data.unshift({
-              id: 0,
-              name: '全部标签'
-            })
-            this.categories = res.data.data
-          }
+        getCategory().then((res) => {
+          res.data.unshift({
+            id: 0,
+            name: '全部标签'
+          })
+          this.categories = res.data
         })
       },
       _getArticle () {
-        request('/api/articles?page=1&include=categories').then((res) => {
-          if (res.statusCode === 200) {
-            res.data.data.forEach((res) => {
-              res.created_at = timeago().format(res.created_at, 'zh_CN')
-            })
-            this.articles = res.data.data
-          }
+        getArticle().then((res) => {
+          res.data.forEach((res) => {
+            res.created_at = timeago().format(res.created_at, 'zh_CN')
+          })
+          this.articles = res.data
         })
       },
       selectCategory (id) {
@@ -123,13 +108,11 @@
           this._getArticle()
           return
         }
-        request(`/api/categories/${id}/articles?include=categories`).then((res) => {
-          if (res.statusCode === 200) {
-            res.data.data.forEach((res) => {
-              res.created_at = timeago().format(res.created_at, 'zh_CN')
-            })
-            this.articles = res.data.data
-          }
+        getCategoryArticle(id).then((res) => {
+          res.data.forEach((res) => {
+            res.created_at = timeago().format(res.created_at, 'zh_CN')
+          })
+          this.articles = res.data
         })
       }
     },

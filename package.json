@@ -11,7 +11,10 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "mpvue": "^1.0.7"
+    "mpvue": "^1.0.7",
+    "github-markdown-css": "^2.10.0",
+    "timeago.js": "^3.0.2",
+    "flyio": "^0.4.3"
   },
   "devDependencies": {
     "mpvue-loader": "^1.0.9",
@@ -62,10 +65,7 @@
     "webpack-merge": "^4.1.0",
     "postcss-loader": "^2.0.6",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "github-markdown-css": "^2.10.0",
-    "timeago.js": "^3.0.2",
-    "flyio": "^0.4.3"
+    "stylus-loader": "^3.0.1"
   },
   "engines": {
     "node": ">= 4.0.0",
