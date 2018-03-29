@@ -19,7 +19,8 @@
               <ul>
                 <li>我不是大神，我只是一枚有点帅的普通php开发者，擅长写各类bug，专业制造bug 30年！</li>
                 <li>爱编程，爱开源，爱分享，爱赚钱，爱生活！</li>
-                <li>我的人生格言：<strong>不要怂，就是干！</strong></li>
+                <li style="display: inline-block">
+                  我的人生格言：<span style="font-weight: 700">不要怂，就是干！</span></li>
                 <li>我很认真，对于任何事！</li>
                 <li>我比较直爽，性格幽默！</li>
                 <li>我很帅，不管你信不信！</li>
@@ -56,8 +57,6 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-  // @import '../../../node_modules/github-markdown-css/github-markdown.css'
-
   .me
     position:relative
     min-height:100%
@@ -79,7 +78,6 @@
           max-width: 1000px
           margin: 0 auto
           background: #fff
-          padding-bottom: 30px
           .header
             position: relative
             padding-top: 55%
@@ -128,8 +126,27 @@
                 font-size: 14px
             .article
               padding: 40px 20px
-              font-size: 15px;
+              font-size: 15px
               background: #fff
+              &.markdown-body
+                line-height: 1.5
+                color: #24292e
+                font-size: 16px
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+              ul
+                padding-left: 2em
+                li
+                  &:before
+                    position: absolute
+                    left: 2.2em
+                    width: 7px
+                    height: 7px
+                    background-color: #111
+                    border-radius: 3.5px
+                    content: ""
+                    margin-top: 8px
+                li+li
+                  margin-top: 0.25em
               &:before
                 display: table
                 content: ""
