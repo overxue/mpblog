@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "mpvue": "^1.0.7",
-    "github-markdown-css": "^2.10.0",
     "timeago.js": "^3.0.2",
-    "flyio": "^0.4.3"
+    "flyio": "^0.4.3",
+    "mpvue-wxparse": "^0.4.5"
   },
   "devDependencies": {
     "mpvue-loader": "^1.0.9",

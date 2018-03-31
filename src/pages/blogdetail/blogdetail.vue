@@ -13,7 +13,8 @@
               <p class="time">发布时间：<span>{{articledetail.created_at}}</span></p>
             </div>
             <div class="article markdown-body">
-              {{articledetail.body}}
+              <!-- {{articledetail.body}} -->
+              <wxParse :content="articledetail.body" />
             </div>
             <div class="sns-share">
               <div @click.prevent="showDetail()">
@@ -54,13 +55,15 @@
   import Navigation from '@/components/navigation'
   import { getArticledetail } from '@/utils/article'
   import timeago from 'timeago.js'
+  import wxParse from 'mpvue-wxparse'
+  // import prism from '@/utils/prism'
 
   export default {
     data () {
       return {
         detailShow: false,
         articledetail: [],
-        show: false
+        show: false,
       }
     },
     mounted () {
@@ -80,19 +83,24 @@
         getArticledetail(id).then((res) => {
           res.created_at = timeago().format(res.created_at, 'zh_CN')
           this.articledetail = res
+          // this.$nextTick(() => {
+          //   prism.highlightAll()
+          // })
         })
       }
     },
     components: {
       'v-footer': Footer,
-      Navigation
+      Navigation,
+      wxParse
     }
   }
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
   // @import '../../common/css/prism.css'
-  // @import '../../../../../node_modules/github-markdown-css/github-markdown.css'
+  // @import '../../../node_modules/github-markdown-css/github-markdown.css'
+  // @import '../../../node_modules/simplemde-theme-base/dist/simplemde-theme-base.min.css'
 
   .blogdetail
     position:relative

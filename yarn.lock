@@ -2592,10 +2592,6 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-github-markdown-css@^2.10.0:
-  version "2.10.0"
-  resolved "http://registry.npm.taobao.org/github-markdown-css/download/github-markdown-css-2.10.0.tgz#0612fed22816b33b282f37ef8def7a4ecabfe993"
-
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "http://registry.npm.taobao.org/glob-base/download/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -3741,6 +3737,10 @@ mpvue-webpack-target@^1.0.0:
   resolved "http://registry.npm.taobao.org/mpvue-webpack-target/download/mpvue-webpack-target-1.0.0.tgz#5117eeecafc29f35c3e3dfd5bcb7e5a1b8e82b68"
   dependencies:
     webpack "^3.4.0"
+
+mpvue-wxparse@^0.4.5:
+  version "0.4.5"
+  resolved "http://registry.npm.taobao.org/mpvue-wxparse/download/mpvue-wxparse-0.4.5.tgz#099ffbfc1bdab2684f42ef7a3f5375db54713d27"
 
 mpvue@^1.0.7:
   version "1.0.7"
