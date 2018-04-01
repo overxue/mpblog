@@ -40,7 +40,7 @@
           <div class="modal-boday">
             <div class="title">如果觉得我的文章对您有用，请随意打赏。你的支持将鼓励我继续创作！</div>
             <div class="img">
-              <img src="/static/img/wechat.jpg" class="img-item">
+              <img src="https://www.overxue.com/images/wechat.jpg" class="img-item">
             </div>
           </div>
         </div>

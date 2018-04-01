@@ -6,7 +6,7 @@
         <div class="header">
           <div class="mac">
             <div class="logo">
-              <img src="/static/img/php.jpg">
+              <img src="https://www.overxue.com/images/php.jpg">
             </div>
             <p>一个不羁的码农,我的世界不只有coding</p>
           </div>

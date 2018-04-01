@@ -8,7 +8,7 @@
             <div class="header-cover no-cover">
               <div class="header-body">
                 <div class="avatar">
-                  <img src="/static/img/avatar.jpg" class="avatar-item">
+                  <img src="https://www.overxue.com/images/avatar.jpg" class="avatar-item">
                 </div>
                 <div class="tit">薛聪</div>
               </div>

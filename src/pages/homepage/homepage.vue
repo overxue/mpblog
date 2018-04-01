@@ -3,7 +3,7 @@
     <music></music>
     <div class="content">
       <div class="avatar">
-        <img src="/static/img/avatar.jpg" class="avatar-item">
+        <img src="https://www.overxue.com/images/avatar.jpg" class="avatar-item">
       </div>
       <h1 class="description">Nothing is impossible.</h1>
       <ul class="tab">
