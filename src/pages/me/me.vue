@@ -1,7 +1,7 @@
 <template>
   <div class="me" :class="{'detail': show}">
     <navigation :me="1" @show="showgun"></navigation>
-    <div class="page" ref="aboutme">
+    <div class="page">
       <div class="blog-detail">
         <div class="blog-detail-contaner">
           <div class="header">
@@ -27,6 +27,7 @@
                 <li>从17年开始搭建博客，希望这件事可以一直坚持下去！</li>
                 <li>这里不仅是我的技术分享，也是我人生路的记载！</li>
                 <li>这个博客其实帮助不了你什么，除了能让你变得跟我一样帅！</li>
+                <li>web端博客地址：<span style="color: deepskyblue">www.overxue.com</span></li>
                 <li>认真生活，认真扯淡！</li>
                 <li>完。</li>
               </ul>

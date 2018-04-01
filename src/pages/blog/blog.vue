@@ -84,6 +84,7 @@
     },
     methods: {
       showgun () {
+        console.log('111')
         this.show = !this.show
       },
       _getCategory () {

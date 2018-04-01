@@ -10,10 +10,10 @@
           <a class="nav-list" href="../blog/blog" :class="{ 'router-link-active' : blog }">博文</a>
         </div>
         <div @click="showNav">
-          <a class="nav-list" href="https://weibo.com/3090183841/profile?topnav=1&wvr=6&is_all=1">微博</a>
+          <a class="nav-list" href="../error/error?id=1" :class="{ 'router-link-active' : error == 'weibo' }">微博</a>
         </div>
         <div @click="showNav">
-          <a class="nav-list" href="https://github.com/overxue">GitHub</a>
+          <a class="nav-list" href="../error/error?id=2" :class="{ 'router-link-active' : error == 'github' }">GitHub</a>
         </div>
         <div @click="showNav">
           <a class="nav-list" href="../me/me" :class="{ 'router-link-active' : me }">关于我</a>
@@ -36,6 +36,7 @@
   export default {
     props: [
       'blog',
+      'error',
       'me'
     ],
     data () {
