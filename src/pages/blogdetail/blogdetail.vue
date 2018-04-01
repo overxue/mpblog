@@ -10,10 +10,9 @@
           <div class="article-section">
             <div class="caption">
               <h1 class="titl">{{articledetail.title}}</h1>
-              <p class="time">发布时间：<span>{{articledetail.created_at}}</span></p>
+              <p class="time">发布时间:<span>{{articledetail.created_at}}</span></p>
             </div>
             <div class="article markdown-body">
-              <!-- {{articledetail.body}} -->
               <wxParse :content="articledetail.body" />
             </div>
             <div class="sns-share">
@@ -54,16 +53,15 @@
   import Footer from '@/components/footer'
   import Navigation from '@/components/navigation'
   import { getArticledetail } from '@/utils/article'
-  import timeago from 'timeago.js'
+  // import timeago from 'timeago.js'
   import wxParse from 'mpvue-wxparse'
-  // import prism from '@/utils/prism'
 
   export default {
     data () {
       return {
         detailShow: false,
         articledetail: [],
-        show: false,
+        show: false
       }
     },
     mounted () {
@@ -81,7 +79,7 @@
       },
       _getArticledetail (id) {
         getArticledetail(id).then((res) => {
-          res.created_at = timeago().format(res.created_at, 'zh_CN')
+          // res.created_at = timeago().format(res.created_at, 'zh_CN')
           this.articledetail = res
           // this.$nextTick(() => {
           //   prism.highlightAll()
@@ -98,10 +96,6 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-  // @import '../../common/css/prism.css'
-  // @import '../../../node_modules/github-markdown-css/github-markdown.css'
-  // @import '../../../node_modules/simplemde-theme-base/dist/simplemde-theme-base.min.css'
-
   .blogdetail
     position:relative
     min-height:100%
@@ -124,7 +118,7 @@
           max-width: 1000px
           margin: 0 auto
           background: #fff
-          padding-bottom: 50px
+          // padding-bottom: 50px
           .header
             position: relative
             padding-top: 44%
@@ -146,46 +140,47 @@
             .caption
               padding: 0 20px
               .titl
-                margin-bottom: .4em
+                margin-bottom: 20px
                 font-size: 20px
-                font-weight:600
+                font-weight: 700
                 color:#3d464d !important
               .time
-                font-size: 14px
+                font-size: 15px
+                color: #95a5a6
             .article
-              padding: 40px 20px;
-              font-size: 20;
-              background: #fff;
+              padding: 20px
+              font-size: 20
+              background: #fff
               &:before
-                display: table;
-                content: "";
+                display: table
+                content: ""
             .sns-share
               padding: 2em 0 2em
               text-align: center
               div
-                display: inline-block;
-                width: 80px;
-                height: 80px;
-                margin: 0 1em;
-                border-radius: 50%;
-                font-size: 1.2rem;
-                color: #fff;
-                background: #fa7d3c;
+                display: inline-block
+                width: 80px
+                height: 80px
+                margin: 0 1em
+                border-radius: 50%
+                font-size: 1.2rem
+                color: #fff
+                background: #fa7d3c
                 i
-                  display: block;
-                  padding-top: 10px;
-                  line-height: 30px;
-                  font-size: 30px;
+                  display: block
+                  padding-top: 10px
+                  line-height: 30px
+                  font-size: 30px
                 .l-icon
-                  font-family: layIcon;
-                  font-style: normal;
+                  font-family: layIcon
+                  font-style: normal
                 span
-                  display: block;
-                  line-height: 30px;
-                  font-size: 14px;
+                  display: block
+                  line-height: 30px
+                  font-size: 14px
           .comments-section
             position: relative
-            padding: 2em 1em;
+            padding: 2em 1em
             background: #f5f8fa
             &:before
               position: absolute
@@ -287,11 +282,11 @@
       &.fade-enter, &.fade-leave-to
         opacity: 0
     .modal-dialog
-      width: 350px;
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      transform: translate(-50%,-50%);
+      width: 350px
+      position: absolute
+      top: 45%
+      left: 50%
+      transform: translate(-50%,-50%)
       margin: 30px auto
       z-index: 100
       text-align: center
@@ -300,13 +295,13 @@
       &.fade-enter, &.fade-leave-to
         opacity: 0
       .modal-content
-        box-shadow: 0 5px 25px rgba(0,0,0,.1);
-        border: 1px solid rgba(0,0,0,.1);
-        overflow: hidden;
-        position: relative;
-        background-color: #fff;
-        border-radius: 6px;
-        background-clip: padding-box;
+        box-shadow: 0 5px 25px rgba(0,0,0,.1)
+        border: 1px solid rgba(0,0,0,.1)
+        overflow: hidden
+        position: relative
+        background-color: #fff
+        border-radius: 6px
+        background-clip: padding-box
         outline: 0;
         .modal-header
           float: right

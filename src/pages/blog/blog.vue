@@ -288,7 +288,6 @@
                 right: 0
                 width: 100%
                 height: 100%
-                -webkit-transform: rotate(45deg) scale(.8)
                 transform: rotate(45deg) scale(.8)
                 text-align: center
                 line-height: 15px
@@ -298,9 +297,8 @@
               line-height: 20px
               a
                 font-size: 20px
-                font-weight: 600
-                color: #3d464d!important
-                cursor: pointer
+                font-weight: 700
+                color: #3d464d !important
             .introduction
               margin: 15px 0
               .icon-user, .icon-clock, .icon-eye
@@ -313,6 +311,8 @@
                   margin-left: 5px
                   font-size: 14px
                   line-height: 14px
+            .article-content
+              line-height: 1.2
             .readmore
               width: 100%
               margin-top: 15px

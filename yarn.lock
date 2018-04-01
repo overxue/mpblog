@@ -3738,9 +3738,9 @@ mpvue-webpack-target@^1.0.0:
   dependencies:
     webpack "^3.4.0"
 
-mpvue-wxparse@^0.4.5:
-  version "0.4.5"
-  resolved "http://registry.npm.taobao.org/mpvue-wxparse/download/mpvue-wxparse-0.4.5.tgz#099ffbfc1bdab2684f42ef7a3f5375db54713d27"
+mpvue-wxparse@^0.4.8:
+  version "0.4.8"
+  resolved "http://registry.npm.taobao.org/mpvue-wxparse/download/mpvue-wxparse-0.4.8.tgz#f6fe3f5bb59c40448ab88b657acc15d32d177d62"
 
 mpvue@^1.0.7:
   version "1.0.7"

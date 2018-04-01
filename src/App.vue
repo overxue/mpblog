@@ -90,9 +90,10 @@ navigator {
 .icon-sina-weibo:before{
   content: "\ea9a";
 }
-.pre {
+
+/* .pre {
   background:#f6f8fa;
   padding: 16px;
-}
+} */
 
 </style>
