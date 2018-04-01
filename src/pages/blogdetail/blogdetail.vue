@@ -81,9 +81,6 @@
         getArticledetail(id).then((res) => {
           // res.created_at = timeago().format(res.created_at, 'zh_CN')
           this.articledetail = res
-          // this.$nextTick(() => {
-          //   prism.highlightAll()
-          // })
         })
       }
     },
@@ -149,7 +146,7 @@
                 color: #95a5a6
             .article
               padding: 20px
-              font-size: 20
+              font-size: 20px
               background: #fff
               &:before
                 display: table

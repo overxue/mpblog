@@ -41,10 +41,6 @@
     overflow: hidden
     background: #fff
     z-index: 3
-    #particles
-      position: absolute
-      width: 100%
-      height: 100%
     .content
       position :absolute
       top: 0

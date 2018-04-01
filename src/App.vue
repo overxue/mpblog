@@ -91,9 +91,26 @@ navigator {
   content: "\ea9a";
 }
 
-/* .pre {
-  background:#f6f8fa;
-  padding: 16px;
-} */
+.wxParse {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif !important;
+  color: #24292e !important;
+  font-size: 15px;
+}
+
+.wxParse .pre {
+  background:#f6f8fa !important;
+  padding: 16px !important;
+  overflow: scroll;
+  white-space: pre !important;
+  border-radius: 3px;
+}
+
+.wxParse .code {
+  background: #f6f8fa !important
+}
+
+.wxParse .pre, .wxParse .tt, .wxParse .code, .wxParse .kbd, .wxParse .samp {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif !important;
+}
 
 </style>
