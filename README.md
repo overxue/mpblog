@@ -14,7 +14,7 @@
 </p>
 
 ## 扫码体验
-<img alt="博客首页" src="http://p5vnm2kox.bkt.clouddn.com/github/nimi.jpg" width="30%" height="30%"/>
+<img alt="博客首页" src="http://p5vnm2kox.bkt.clouddn.com/github/mini.jpg" width="30%" height="30%"/>
 
 ## 基础安装
 #### 1. 克隆`mpblog`源代码
